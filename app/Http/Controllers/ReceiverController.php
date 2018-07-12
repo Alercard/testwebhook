@@ -9,7 +9,9 @@ class ReceiverController extends Controller
 {
     //
     public function getAllOrders() {
-    	return Receive::all()->orderBy('created_at');
+    	return Receive::all(function($query){
+            $query->orderBy('created_at');
+        });
     }
 
     public function createOrder(Request $request) {

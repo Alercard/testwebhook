@@ -6,3 +6,21 @@
 	"password": "ntWFA3FOikHr",
 	"phpmyadmin": "localhost:8888/phpmyadmin"
 }
+/**
+Algoritmo middleware Verificacion
+https://stackoverflow.com/questions/45435879/verify-woocommerce-web-hook-in-laravel?rq=1
+
+public function handle($request, Closure $next)
+{
+    $signature = Request::header('x-wc-webhook-signature');
+
+    $payload = Request::getContent();
+    $calculated_hmac = base64_encode(hash_hmac('sha256', $payload, env('WOOCOMMERCE_WEBHOOK_ITEM_UPDATED'), true));
+
+    if($signature != $calculated_hmac) {
+        return false;
+    }
+
+    return $next($request);
+}
+*/
