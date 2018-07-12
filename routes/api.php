@@ -17,8 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['middleware' => 'auth:api'], function() {
+	Route::get('/orders', 'ReceiverController@getAllOrders');
 });
-Route::get('/orders', 'ReceiverController@getAllOrders');
 Route::post('/order', 'ReceiverController@createOrder');
 Route::put('/order/{id}', 'ReceiverController@updateOrder');
 Route::post('/register', 'Auth\RegisterController@register');
