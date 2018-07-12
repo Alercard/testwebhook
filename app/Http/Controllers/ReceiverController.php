@@ -9,13 +9,12 @@ class ReceiverController extends Controller
 {
     //
     public function getAllOrders() {
-    	return Receive::all();
+    	return Receive::all()->orderBy('created_at');
     }
 
     public function createOrder(Request $request) {
-        Log::debug($request->all());
     	$data = array(
-    		'data_json' => json_encode( $request->all() )
+            'data_json' => json_encode( array_merge( $request->all(), $request->header() ) )
     	);
     	$receive = new Receive($data);
     	$receive->save();
