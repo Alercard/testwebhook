@@ -1,0 +1,8 @@
+{
+	"server": "18.191.215.69",
+	"path_phk": "C:\\Users\\Erick Abad\\Amazon Drive\\FM STORE\\LightSail.ppk",
+	"user": "bitnami",
+	"getPwd":"cat bitnami_application_password",
+	"password": "AEtV8stMmkC5",
+	"phpmyadmin": "localhost:8888/phpmyadmin"
+}
