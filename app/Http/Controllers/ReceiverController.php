@@ -13,6 +13,7 @@ class ReceiverController extends Controller
     }
 
     public function createOrder(Request $request) {
+        Log::debug($request->all());
     	$data = array(
     		'data_json' => json_encode( $request->all() )
     	);
