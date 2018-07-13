@@ -16,9 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
 Route::group(['middleware' => 'WCVerify'], function() {
-	Route::post('/order', 'ReceiverController@createOrder');
 });
+*/
+Route::post('/order', 'ReceiverController@createOrder');
 Route::get('/orders', 'ReceiverController@getAllOrders');
 Route::put('/order/{id}', 'ReceiverController@updateOrder');
 Route::post('/register', 'Auth\RegisterController@register');
